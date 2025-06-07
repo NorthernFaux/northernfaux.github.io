@@ -125,21 +125,21 @@
         <a href="https://www.mozilla.org/en-US/firefox/new/">
           <img 
             srcset="assets/firefox_logo-only_RGB_400.png 400w, assets/firefox_logo-only_RGB_120.png 120w"
-            sizes="400px, 120px"
+            sizes="(min-width: 600px) 400px, 120px"
             src="assets/firefox_logo-only_RGB_400.png"
             alt="Firefox Logo">
         </a>
         <a href="https://www.mozilla.org/">
           <img
             srcset="assets/mozilla-dinosaur-head_400.png 400w, assets/mozilla-dinosaur-head_120.png 120w"
-            sizes="400px, 120px"
+            sizes="(min-width: 600px) 400px, 120px"
             src="assets/mozilla-dinosaur-head_400.png"
             alt="Mozilla Logo">
         </a>
         <a href="https://addons.mozilla.org/">
           <img
             srcset="assets/firefox-addons_400.jpg 400w, assets/firefox-addons_120.jpg 120w"
-            sizes="400px, 120px"
+            sizes="(min-width: 600px) 400px, 120px"
             src="assets/firefox-addons_400.jpg"
             alt="Mozilla Addons Logo">
         </a>
@@ -150,7 +150,12 @@
       </div>
 
       <div class="red-panda">
-        <!-- insert picture element -->
+        <picture>
+            <source media="(max-width: 600px)"
+                    srcset="assets/red-panda_portrait.jpg">
+            <img src="assets/red-panda_1200.jpg" 
+                 alt="a red panda">
+        </picture>
       </div>
 
     </main>
