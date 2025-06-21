@@ -8,6 +8,8 @@ body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;
+  font-family: "Forum", serif;
+  font-weight: 400;
 }
 
 /* Layout */
@@ -43,3 +45,7 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+h1, h2 {
+    font-family: "Aleo", serif;
+    font-weight: 500;
+}
