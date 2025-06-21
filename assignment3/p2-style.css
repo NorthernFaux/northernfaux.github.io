@@ -10,6 +10,9 @@ div {
     background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.2) 30%);
     border: 1px solid #4b2c5d;
     border-radius: 15px;
+    box-shadow: black 10px 10px 10px,
+                inset rgba(255, 255, 255, 0.7) 5px 5px 5px,
+                inset rgba(0, 0, 0, 0.7) -5px -5px 5px;
     display: flex;
     justify-content: center;
     align-items: center;
