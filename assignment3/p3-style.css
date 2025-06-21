@@ -82,3 +82,9 @@ a:focus {
     text-decoration: none;
     outline: none;
 }
+a[href^=http]:before {
+    content: url(assets/external-link-52.png);
+    display: inline-flex;
+    width: 0.875em;
+    height: 0.875em;
+}
