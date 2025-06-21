@@ -7,6 +7,7 @@ div {
     width: 200px;
     height: 200px;
     background-color: #613e75;
+    background-image: linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.2) 30%);
     border: 1px solid #4b2c5d;
     border-radius: 15px;
     display: flex;
@@ -16,4 +17,5 @@ div {
     margin-right: auto;
     font-size: 1.125em;
     color: #FFF;
+    text-shadow: 2px 2px black;
 }
