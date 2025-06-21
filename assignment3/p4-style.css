@@ -60,7 +60,11 @@ body {
       float: left;
       margin-right: 1em;
   }
- 
+  
+  article {
+    margin-right: 1em;
+ } 
+
   aside ul {
     display: flex;
     flex-wrap: wrap;
