@@ -3,4 +3,12 @@ html {
 }
 
 /* Your CSS below here */
-
+div {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
