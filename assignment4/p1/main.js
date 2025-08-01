@@ -25,27 +25,34 @@ randomize.addEventListener('click', result);
 
 // changes the story
 function result() {
+  // story items
   let newStory = storyText;
 
   let xItem = randomValueFromArray(insertX);
   let yItem = randomValueFromArray(insertY);
   let zItem = randomValueFromArray(insertZ);
 
-   newStory = newStory.replaceAll(":insertx:", xItem);
-   newStory = newStory.replaceAll(":inserty:", yItem);
-   newStory = newStory.replaceAll(":insertz:", zItem);
 
+  // replaces story values
+  newStory = newStory.replaceAll(":insertx:", xItem);
+  newStory = newStory.replaceAll(":inserty:", yItem);
+  newStory = newStory.replaceAll(":insertz:", zItem);
+
+  // allows custom names if one is set
   if(customName.value !== '') {
     const name = customName.value;
-
+    newStory = newStory.replaceAll("Bob", name);
   }
 
+  // switches it between US/UK measurements
   if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
-
+     const weight = Math.round(300 * 0.071486) + " stone";
+     const temperature =  Math.round((94 - 32) * (5/9)) + " centigrade";
+     newStory = newStory.replaceAll("300 pounds", weight);
+     newStory = newStory.replaceAll("94 fahrenheit", temperature);
   }
 
-  story.textContent = ;
+  // displays the new story
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
