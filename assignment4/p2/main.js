@@ -11,9 +11,11 @@ const imageInfo = [["pic1.jpg", "A butterfly on a leaf"], ["pic2.jpg", "Closeup 
 
 /* Looping through images */
 
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+for (const image of imageInfo) {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', `assets/${image[0]}`);
+    newImage.setAttribute('alt', image[1]);
+    thumbBar.appendChild(newImage);
+}
 
 /* Wiring up the Darken/Lighten button */
