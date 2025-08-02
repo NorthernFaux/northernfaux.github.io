@@ -204,10 +204,12 @@ function loop() {
 
   // draws the balls and updates their position; does collision detection
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
-  }
+    if (ball.exists) {
+            ball.draw();
+            ball.update();
+            ball.collisionDetect();
+        }
+    }
 
   // evil circle methods calling to make it appear on the screen and handle collisions
   evilCircle.draw();
