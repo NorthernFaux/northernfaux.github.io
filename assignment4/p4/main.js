@@ -159,11 +159,12 @@ class EvilCircle extends Shape {
                 // makes the ball not exist
                 if (distance < this.size + ball.size) {
                     ball.exists = false;
+                    count--;
+                    countP.textContent = "ball count: " + count;
                 }
             }
         }
     }
-}
 }
 
 // holds all ball objects
@@ -184,7 +185,10 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  count++;
 }
+
+countP.textContent = "ball count: " + count;
 
 // main loop
 function loop() {
