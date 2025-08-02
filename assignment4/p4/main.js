@@ -75,7 +75,7 @@ class Ball extends Shape {
     // detects if another ball collided with it, then changes its color
     collisionDetect() {
         for (const ball of balls) {
-            // ensures the ball being checked is not itself
+            // ensures the ball being checked is not itself and its still in the game
             if (!(this === ball) && ball.exists) {
                 const dx = this.x - ball.x;
                 const dy = this.y - ball.y;
@@ -86,6 +86,32 @@ class Ball extends Shape {
                 }
             }
         }
+    }
+}
+
+// evil circle object
+class EvilCircle extends Shape {
+    constructor (x, y) {
+        super(x, y, 20, 20);
+        this.color = "rgb(255, 255, 255)";
+        this.size = 10;
+
+        window.addEventListener("keydown", (e) => {
+            switch (e.key) {
+                case "a":
+                    this.x -= this.velX;
+                    break;
+                case "d":
+                    this.x += this.velX;
+                    break;
+                case "w":
+                    this.y -= this.velY;
+                    break;
+                case "s":
+                    this.y += this.velY;
+                    break;
+            }
+        });
     }
 }
 
