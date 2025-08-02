@@ -1,3 +1,5 @@
+// part of p3.html
+
 // setup canvas
 
 const canvas = document.querySelector("canvas");
