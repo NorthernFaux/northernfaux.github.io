@@ -170,6 +170,12 @@ class EvilCircle extends Shape {
 // holds all ball objects
 const balls = [];
 
+// creates an evil circle
+const evilCircle = new EvilCircle (
+    random(0, width),
+    random(0, height)
+);
+
 // creates 25 ball objects
 while (balls.length < 25) {
   const size = random(10, 20);
@@ -202,6 +208,11 @@ function loop() {
     ball.update();
     ball.collisionDetect();
   }
+
+  // evil circle methods calling to make it appear on the screen and handle collisions
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
 
   requestAnimationFrame(loop);
 }
