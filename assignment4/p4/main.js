@@ -91,11 +91,14 @@ class Ball extends Shape {
 
 // evil circle object
 class EvilCircle extends Shape {
+    // creates the evil circle, inheriting size from the shape class but setting velocity
+    // color and size are the same no matter what
     constructor (x, y) {
         super(x, y, 20, 20);
         this.color = "rgb(255, 255, 255)";
         this.size = 10;
 
+        // allows the player to move it around
         window.addEventListener("keydown", (e) => {
             switch (e.key) {
                 case "a":
@@ -113,6 +116,51 @@ class EvilCircle extends Shape {
             }
         });
     }
+
+    // draws the evil circle
+    draw() {
+        ctx.beginPath();
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = this.color;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    // moves the circle away from the edges of the screen
+    checkBounds() {
+        if (this.x + this.size >= width) {
+            this.x -= this.size;
+        }
+        
+        if (this.x - this.size <= 0) {
+            this.x += this.size;
+        }
+        
+        if (this.y + this.size >= height) {
+            this.y -= this.size;
+        }
+
+        if (this.y - this.size <= 0) {
+            this.y += this.size;
+        }
+    }
+
+    // detects if it collides with a ball
+    collisionDetect() {
+        for (const ball of balls) {
+            if (ball.exists) {
+                const dx = this.x - ball.x;
+                const dy = this.y - ball.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // makes the ball not exist
+                if (distance < this.size + ball.size) {
+                    ball.exists = false;
+                }
+            }
+        }
+    }
+}
 }
 
 // holds all ball objects
