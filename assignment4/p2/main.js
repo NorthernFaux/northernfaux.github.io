@@ -15,6 +15,10 @@ for (const image of imageInfo) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `assets/${image[0]}`);
     newImage.setAttribute('alt', image[1]);
+    newImage.addEventListener("click", selected => {
+        displayedImage.src = selected.target.src;
+        displayedImage.alt = selected.target.alt;
+    });
     thumbBar.appendChild(newImage);
 }
 
