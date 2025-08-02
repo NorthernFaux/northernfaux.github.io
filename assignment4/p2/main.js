@@ -10,7 +10,6 @@ const overlay = document.querySelector('.overlay');
 const imageInfo = [["pic1.jpg", "A butterfly on a leaf"], ["pic2.jpg", "Closeup of a human eye"], ["pic3.jpg", "Rock that looks like a wave"], ["pic4.jpg", "Purple and white flowers"], ["pic5.jpg", "Ancient Egyptian artwork in a tomb"]]
 
 /* Looping through images */
-
 for (const image of imageInfo) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', `assets/${image[0]}`);
@@ -23,3 +22,15 @@ for (const image of imageInfo) {
 }
 
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener("click", () => {
+    const buttonClass = btn.getAttribute("class");
+    if (buttonClass === "dark") {
+        btn.setAttribute("class", "light");
+        btn.textContent = "Lighten";
+        overlay.style.backgroundColor = "rgba(0 0 0 / 50%)";
+    } else {
+        btn.setAttribute("class", "dark");
+        btn.textContent = "Darken";
+        overlay.style.backgroundColor = "rgba(0 0 0 / 0%)";
+    }
+});
