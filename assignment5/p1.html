@@ -36,7 +36,7 @@
 
       <form class="search">
         <label for="q" class="hidelabel">Search: </label>
-        <input type="search" name="q" placeholder="Search query">
+        <input type="search" name="q" placeholder="Search query" aria-label="search bar">
         <input type="submit" value="Go!">
       </form>
     </nav>
@@ -113,7 +113,7 @@
         <audio controls>
           <source src="media/bear.mp3" type="audio/mp3">
           <source src="media/bear.ogg" type="audio/ogg">
-          <p>It looks like your browser doesn't support HTML5 audio players.</p>
+          <p>It looks like your browser doesn't support HTML5 audio players. Here's a <a href="media/bear.mp3">Link to the audio</a> instead.</p>
         </audio>
 
         <aside>
@@ -137,11 +137,11 @@
             <form class="comment-form">
               <div class="flex-pair">
                 <label for="name">Your name:</label>
-                <input type="text" name="name" id="name" placeholder="Enter your name">
+                <input type="text" name="name" id="name" placeholder="Enter your name" aria-label="Name field">
               </div>
               <div class="flex-pair">
                 <label for="comment">Your comment:</label>
-                <input type="text" name="comment" id="comment" placeholder="Enter your comment">
+                <input type="text" name="comment" id="comment" placeholder="Enter your comment" aria-label="Comment field">
               </div>
               <div>
                 <input type="submit" value="Submit comment">
